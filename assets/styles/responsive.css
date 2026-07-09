@@ -1,0 +1,189 @@
+@media (max-width: 980px) {
+  .carousel-slide {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .carousel-slide img {
+    height: 320px;
+    min-height: 0;
+  }
+
+  .carousel-caption {
+    min-height: 220px;
+  }
+
+  .carousel-control {
+    top: 160px;
+  }
+
+  .carousel-control.next {
+    right: 18px;
+  }
+
+  .carousel-control.prev {
+    left: 18px;
+  }
+
+  .carousel-dots {
+    position: static;
+    justify-content: center;
+    padding: 12px 0 16px;
+    transform: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .carousel-slide img {
+    height: 230px;
+  }
+
+  .carousel-caption {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .carousel-caption h3 {
+    max-width: none;
+    font-size: 1.65rem;
+  }
+
+  .carousel-control {
+    top: 115px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .carousel-dots {
+    padding: 10px 0 14px;
+  }
+
+  .carousel-actions .button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .menu-button {
+    display: inline-flex;
+  }
+
+  .main-nav {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    top: 72px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: white;
+    box-shadow: var(--shadow);
+  }
+
+  .main-nav.is-open {
+    display: flex;
+  }
+
+  .content-band,
+  .contact-section,
+  .service-grid,
+  .gallery,
+  .editor-grid,
+  .admin-workspace,
+  .admin-gallery,
+  .section-heading-row,
+  .admin-title-row {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading-row,
+  .admin-title-row {
+    display: grid;
+    align-items: start;
+  }
+
+  .admin-edit-form {
+    position: static;
+    max-height: none;
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-copy h2 {
+    max-width: 14ch;
+  }
+
+  .hero {
+    min-height: 720px;
+  }
+
+  .hero h1 {
+    max-width: 11ch;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand small {
+    display: none;
+  }
+
+  .hero {
+    min-height: 640px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+
+  .form-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .contact-card {
+    padding: 14px;
+  }
+
+  .contact-section {
+    padding-inline: 14px;
+  }
+
+  .contact-copy h2 {
+    max-width: none;
+  }
+
+  .contact-list li {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 11px;
+  }
+
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .quote-form,
+  .gallery-admin,
+  .admin-login {
+    padding: 20px;
+  }
+}
+
+/* Rzu-Informatique */

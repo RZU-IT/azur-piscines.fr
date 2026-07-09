@@ -1,0 +1,14 @@
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 28px clamp(18px, 5vw, 64px);
+  color: white;
+  background: var(--blue-dark);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Rzu-Informatique */

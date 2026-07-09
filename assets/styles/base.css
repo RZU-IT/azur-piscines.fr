@@ -1,0 +1,67 @@
+:root {
+  --blue: #075b75;
+  --blue-dark: #053847;
+  --aqua: #18a8c6;
+  --sand: #f4efe6;
+  --paper: #fffdf8;
+  --ink: #16292f;
+  --muted: #5e737a;
+  --line: #dbe7e8;
+  --shadow: 0 18px 45px rgba(6, 44, 54, 0.14);
+  --shadow-strong: 0 24px 60px rgba(6, 44, 54, 0.2);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --hover-duration: 0.34s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroDrift {
+  from {
+    transform: scale(1.03);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Rzu-Informatique */

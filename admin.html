@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administration galerie - Azur Piscines</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="assets/styles/base.css">
+    <link rel="stylesheet" href="assets/styles/navigation.css">
+    <link rel="stylesheet" href="assets/styles/hero.css">
+    <link rel="stylesheet" href="assets/styles/services.css">
+    <link rel="stylesheet" href="assets/styles/gallery.css">
+    <link rel="stylesheet" href="assets/styles/contact.css">
+    <link rel="stylesheet" href="assets/styles/admin.css">
+    <link rel="stylesheet" href="assets/styles/footer.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+  </head>
+  <body data-page="admin">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Accueil Azur Piscines">
+        <span class="brand-mark">AP</span>
+        <span>
+          <strong data-field="companyName">Azur Piscines</strong>
+          <small data-field="tagline">Administration de la galerie</small>
+        </span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="gallery.html">Galerie</a>
+        <a class="admin-link" href="admin.html">Admin</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section admin-section admin-page">
+        <div class="admin-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Acc&egrave;s admin</p>
+            <h1>Gestion de la galerie</h1>
+            <p>Cette page sert uniquement &agrave; ajouter, modifier, supprimer et r&eacute;ordonner les produits, services et photos de la galerie.</p>
+          </div>
+
+          <form id="login-form" class="admin-login">
+            <label>Mot de passe
+              <input type="password" name="password" required>
+            </label>
+            <button class="button primary" type="submit">Se connecter</button>
+            <p id="login-error" class="error"></p>
+          </form>
+
+          <div id="admin-panel" class="admin-panel" hidden>
+            <div class="gallery-admin">
+              <div class="admin-title-row">
+                <div>
+                  <h2>Photos de la galerie</h2>
+                  <p>Les premi&egrave;res photos de cette liste sont celles mises en avant sur la page d'accueil.</p>
+                </div>
+                <button class="button ghost" id="reset-gallery" type="button">R&eacute;initialiser la galerie</button>
+              </div>
+
+              <div class="admin-workspace">
+                <form id="photo-form" class="photo-form admin-edit-form">
+                  <input type="hidden" name="id">
+                  <label>Titre du produit ou chantier
+                    <input name="title" required placeholder="Piscine familiale avec plage bois">
+                  </label>
+                  <label>Produit / service
+                    <input name="category" required placeholder="Construction, rénovation, entretien...">
+                  </label>
+                  <label>Description
+                    <textarea name="description" rows="4" required placeholder="Courte description du chantier ou du service réalisé"></textarea>
+                  </label>
+                  <label>Fichier image
+                    <input type="file" name="image" accept="image/*" required>
+                  </label>
+                  <div class="form-actions">
+                    <button class="button primary" id="photo-submit" type="submit">Ajouter la photo</button>
+                    <button class="button ghost" id="cancel-edit" type="button" hidden>Annuler la modification</button>
+                  </div>
+                </form>
+
+                <div id="admin-gallery" class="admin-gallery"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><strong data-field="companyName">Azur Piscines</strong> - Administration galerie</p>
+      <a href="gallery.html">Voir la galerie</a>
+    </footer>
+
+    <script src="assets/scripts/app.js"></script>
+    <!-- Rzu-Informatique -->
+  </body>
+</html>
