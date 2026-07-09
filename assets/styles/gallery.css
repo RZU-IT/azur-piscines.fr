@@ -50,6 +50,16 @@
   font-size: 0.95rem;
 }
 
+.gallery-toggle-wrap {
+  display: none;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.gallery-toggle {
+  min-width: 170px;
+}
+
 .carousel {
   position: relative;
   overflow: hidden;
