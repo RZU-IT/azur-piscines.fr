@@ -227,4 +227,33 @@
   background: #ffe8e8;
 }
 
+@media (max-width: 1100px) {
+  .admin-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-edit-form {
+    position: static;
+    max-height: none;
+  }
+
+  .admin-gallery {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .admin-title-row {
+    display: grid;
+  }
+
+  .admin-title-row .button {
+    width: 100%;
+  }
+
+  .admin-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Rzu-Informatique */
