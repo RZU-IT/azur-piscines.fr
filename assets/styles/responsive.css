@@ -99,6 +99,15 @@
     display: flex;
   }
 
+  .main-nav a::after {
+    display: none;
+  }
+
+  .main-nav a:hover,
+  .main-nav a:focus-visible {
+    color: var(--aqua);
+  }
+
   .content-band,
   .contact-section,
   .service-grid,
