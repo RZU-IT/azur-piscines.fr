@@ -1,4 +1,4 @@
-const DEMO_ACCESS_CODE = "piscine2026";
+const DEMO_ACCESS_HASH = "8348dba3fb45e71da83acebf4e2635417001cae6e4ecf4de106de8b0947acf29";
 const STORAGE_KEY = "pisciniste-site-content-v5";
 
 const defaults = {
@@ -341,6 +341,12 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
+async function sha256(value) {
+  const data = new TextEncoder().encode(String(value));
+  const hash = await crypto.subtle.digest("SHA-256", data);
+  return [...new Uint8Array(hash)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
 function setupNavigation() {
   const menuButton = document.querySelector(".menu-button");
   const nav = document.querySelector("#main-nav");
@@ -379,11 +385,11 @@ function setupAdmin() {
   const adminPanel = document.querySelector("#admin-panel");
   if (!loginForm || !adminPanel) return;
 
-  loginForm.addEventListener("submit", (event) => {
+  loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const password = new FormData(loginForm).get("password");
 
-    if (password !== DEMO_ACCESS_CODE) {
+    if (await sha256(password) !== DEMO_ACCESS_HASH) {
       document.querySelector("#login-error").textContent = "Mot de passe incorrect.";
       return;
     }
