@@ -473,12 +473,20 @@ function setupAdmin() {
   });
 }
 
-applyContent();
-setupNavigation();
-setupQuoteForm();
-setupAdmin();
-renderGallery("#full-gallery", state.photos);
-renderFeaturedCarousel(state.photos);
-setupMobileGalleryToggle();
+function init() {
+  applyContent();
+  setupNavigation();
+  setupQuoteForm();
+  setupAdmin();
+  renderGallery("#full-gallery", state.photos);
+  renderFeaturedCarousel(state.photos);
+  setupMobileGalleryToggle();
+}
+
+if (document.querySelector("[data-include]")) {
+  document.addEventListener("includes:ready", init, { once: true });
+} else {
+  init();
+}
 
 // Rzu-Informatique
