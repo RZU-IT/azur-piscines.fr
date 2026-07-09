@@ -188,6 +188,10 @@
     height: 36px;
   }
 
+  .gallery-toggle-wrap {
+    display: flex;
+  }
+
   .quote-form,
   .gallery-admin,
   .admin-login {

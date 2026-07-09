@@ -166,6 +166,40 @@ function renderGallery(selector, photos) {
   photos.forEach((photo) => gallery.appendChild(galleryCard(photo)));
 }
 
+function setupMobileGalleryToggle() {
+  const gallery = document.querySelector("#full-gallery");
+  const toggle = document.querySelector("#gallery-toggle");
+  if (!gallery || !toggle) return;
+
+  const mobileQuery = window.matchMedia("(max-width: 700px)");
+  let expanded = false;
+
+  function sync() {
+    const cards = [...gallery.querySelectorAll(".gallery-card")];
+    const shouldLimit = mobileQuery.matches && cards.length > 3;
+
+    toggle.hidden = !shouldLimit;
+    toggle.textContent = expanded ? "Voir moins" : "Voir plus";
+
+    cards.forEach((card, index) => {
+      card.hidden = shouldLimit && !expanded && index >= 3;
+    });
+  }
+
+  toggle.addEventListener("click", () => {
+    expanded = !expanded;
+    sync();
+    if (!expanded) gallery.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  mobileQuery.addEventListener("change", () => {
+    expanded = false;
+    sync();
+  });
+
+  sync();
+}
+
 function renderFeaturedCarousel(photos) {
   const track = document.querySelector("#featured-carousel");
   const dots = document.querySelector("#featured-carousel-dots");
@@ -445,5 +479,6 @@ setupQuoteForm();
 setupAdmin();
 renderGallery("#full-gallery", state.photos);
 renderFeaturedCarousel(state.photos);
+setupMobileGalleryToggle();
 
 // Rzu-Informatique
