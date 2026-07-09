@@ -120,28 +120,52 @@
 
 .admin-workspace {
   display: grid;
-  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  grid-template-columns: 1fr;
   gap: 22px;
   align-items: start;
 }
 
 .admin-gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
   gap: 18px;
 }
 
 .admin-edit-form {
-  position: sticky;
-  top: 84px;
   z-index: 30;
-  max-height: calc(100vh - 104px);
-  overflow: auto;
+  max-height: none;
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: white;
   box-shadow: 0 12px 28px rgba(6, 44, 54, 0.12);
+}
+
+.admin-edit-form input[type="file"] {
+  padding: 8px;
+  cursor: pointer;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.admin-edit-form input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: var(--blue);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  transition:
+    transform var(--hover-duration) var(--ease),
+    background-color var(--hover-duration) var(--ease);
+}
+
+.admin-edit-form input[type="file"]::file-selector-button:hover {
+  background: var(--blue-dark);
+  transform: translateY(-1px);
 }
 
 .admin-gallery-card {
@@ -228,15 +252,6 @@
 }
 
 @media (max-width: 1100px) {
-  .admin-workspace {
-    grid-template-columns: 1fr;
-  }
-
-  .admin-edit-form {
-    position: static;
-    max-height: none;
-  }
-
   .admin-gallery {
     grid-template-columns: repeat(2, minmax(260px, 1fr));
   }
