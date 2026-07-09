@@ -1,0 +1,230 @@
+.admin-section {
+  padding: clamp(54px, 8vw, 96px) clamp(18px, 5vw, 64px);
+  background: var(--sand);
+}
+
+.admin-page {
+  min-height: calc(100vh - 154px);
+}
+
+.admin-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.admin-panel {
+  display: grid;
+  gap: 28px;
+}
+
+.editor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.editor-grid label {
+  align-content: start;
+}
+
+.editor-grid textarea {
+  min-height: 120px;
+}
+
+.gallery-admin,
+.admin-login,
+.quote-form {
+  padding: 28px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.quote-form {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  gap: 16px;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, rgba(24, 168, 198, 0.75), rgba(7, 91, 117, 0.28)) border-box;
+  border: 1px solid transparent;
+}
+
+.quote-form .button {
+  font-weight: 700;
+}
+
+.quote-form::before {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  background: rgba(24, 168, 198, 0.12);
+  content: "";
+}
+
+.form-heading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 4px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.form-heading span {
+  color: var(--blue-dark);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.form-heading strong {
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: var(--blue);
+  background: #e9f8fb;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.gallery-admin,
+.admin-panel,
+.admin-shell,
+.admin-section {
+  overflow: visible;
+}
+
+.admin-title-row {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.admin-title-row h2 {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+}
+
+.admin-title-row p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.admin-workspace {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.admin-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.admin-edit-form {
+  position: sticky;
+  top: 84px;
+  z-index: 30;
+  max-height: calc(100vh - 104px);
+  overflow: auto;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 12px 28px rgba(6, 44, 54, 0.12);
+}
+
+.admin-gallery-card {
+  outline: 2px solid transparent;
+  transition: outline-color var(--hover-duration) var(--ease), transform var(--hover-duration) var(--ease);
+}
+
+.admin-gallery-card:hover {
+  outline-color: rgba(24, 168, 198, 0.45);
+  transform: translateY(-2px);
+}
+
+.admin-card-body {
+  display: grid;
+  gap: 8px;
+}
+
+.admin-card-body p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.admin-card-body h3 {
+  margin: 0;
+}
+
+.admin-card-index {
+  color: var(--aqua) !important;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.photo-order-actions {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px !important;
+  padding: 0 !important;
+  margin-top: 6px;
+}
+
+.photo-order-actions button,
+.danger-button {
+  border-radius: 8px;
+  padding: 9px 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.photo-order-actions button {
+  border: 1px solid var(--line);
+  background: #f7fbfb;
+  color: var(--blue-dark);
+  transition: transform var(--hover-duration) var(--ease), border-color var(--hover-duration) var(--ease), background-color var(--hover-duration) var(--ease);
+}
+
+.photo-order-actions button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: var(--aqua);
+  background: #eefbfc;
+}
+
+.photo-order-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.danger-button {
+  border: 1px solid #f0c0c0;
+  background: #fff4f4;
+  color: #9d1f1f;
+}
+
+.danger-button:hover {
+  background: #ffe8e8;
+}
+
+/* Rzu-Informatique */

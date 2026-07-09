@@ -1,0 +1,172 @@
+﻿<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Azur Piscines - Artisan pisciniste</title>
+    <meta name="description" content="Artisan pisciniste pour construction, rénovation et entretien de piscines. Demande de devis et galerie de chantiers.">
+    <link rel="stylesheet" href="assets/styles/base.css">
+    <link rel="stylesheet" href="assets/styles/navigation.css">
+    <link rel="stylesheet" href="assets/styles/hero.css">
+    <link rel="stylesheet" href="assets/styles/services.css">
+    <link rel="stylesheet" href="assets/styles/gallery.css">
+    <link rel="stylesheet" href="assets/styles/contact.css">
+    <link rel="stylesheet" href="assets/styles/admin.css">
+    <link rel="stylesheet" href="assets/styles/footer.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Accueil Azur Piscines">
+        <span class="brand-mark">AP</span>
+        <span>
+          <strong data-field="companyName">Azur Piscines</strong>
+          <small data-field="tagline">Artisan pisciniste pr&egrave;s de chez vous</small>
+        </span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#services">Services</a>
+        <a href="gallery.html">Galerie</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="admin-link" href="admin.html">Admin</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="accueil" class="hero section">
+        <img class="hero-image" src="assets/images/hero-piscine.png" alt="Piscine enterrée moderne dans un jardin avec terrasse claire">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Construction, r&eacute;novation, entretien</p>
+          <h1 data-field="heroTitle">Votre piscine, pens&eacute;e et r&eacute;alis&eacute;e par un artisan local.</h1>
+          <p data-field="heroText">J'accompagne les particuliers de l'&eacute;tude du projet jusqu'&agrave; la mise en eau, avec des solutions fiables, durables et adapt&eacute;es &agrave; votre terrain.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#contact">Demander un devis</a>
+            <a class="button secondary" href="gallery.html">Voir tous les chantiers</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro section content-band">
+        <div>
+          <p class="eyebrow">Zone d'intervention</p>
+          <h2 data-field="areaTitle">Un pisciniste disponible dans votre secteur</h2>
+        </div>
+        <p data-field="areaText">Bas&eacute; localement, j'interviens dans un rayon d'environ 40 km pour les projets de construction, r&eacute;novation, remise en service et suivi d'entretien.</p>
+      </section>
+
+      <section id="services" class="section services">
+        <div class="section-heading">
+          <p class="eyebrow">Prestations</p>
+          <h2>Des services clairs pour chaque &eacute;tape</h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span>01</span>
+            <h3 data-field="serviceConstructionTitle">Construction de piscine</h3>
+            <p data-field="serviceConstructionText">&Eacute;tude du terrain, choix des &eacute;quipements, terrassement, structure, filtration et finitions.</p>
+          </article>
+          <article class="service-card">
+            <span>02</span>
+            <h3 data-field="serviceRenovationTitle">R&eacute;novation</h3>
+            <p data-field="serviceRenovationText">Remplacement de liner, reprise des margelles, modernisation de la filtration et am&eacute;lioration du confort.</p>
+          </article>
+          <article class="service-card">
+            <span>03</span>
+            <h3 data-field="serviceEntretienTitle">Entretien et d&eacute;pannage</h3>
+            <p data-field="serviceEntretienText">Mise en route, hivernage, analyse de l'eau, nettoyage, r&eacute;glages et suivi technique.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="realisations" class="section gallery-section">
+        <div class="section-heading section-heading-row">
+          <div>
+            <p class="eyebrow">Chantiers principaux</p>
+            <h2>Les piscines &agrave; mettre en avant</h2>
+            <p>Un aper&ccedil;u des r&eacute;alisations les plus parlantes. La galerie compl&egrave;te regroupe tous les chantiers.</p>
+          </div>
+        </div>
+        <div class="carousel" aria-label="Chantiers mis en avant">
+          <button class="carousel-control prev" type="button" data-carousel-prev aria-label="Photo précédente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
+          <div id="featured-carousel" class="carousel-track"></div>
+          <button class="carousel-control next" type="button" data-carousel-next aria-label="Photo suivante"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+          <div id="featured-carousel-dots" class="carousel-dots" aria-label="Navigation du carrousel"></div>
+        </div>
+        <div class="carousel-actions">
+          <a class="button primary" href="gallery.html">Galerie compl&egrave;te</a>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div class="contact-copy">
+          <p class="eyebrow">Devis gratuit</p>
+          <h2 data-field="contactTitle">Parlons de votre projet piscine</h2>
+          <p data-field="contactText">D&eacute;crivez votre besoin, votre commune et le d&eacute;lai souhait&eacute;. Je vous r&eacute;ponds rapidement pour organiser un premier &eacute;change.</p>
+          <div class="contact-panel">
+            <div class="contact-card">
+              <ul class="contact-list">
+              <li>
+                <span class="contact-icon" aria-label="T&eacute;l&eacute;phone">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.91.32 1.8.6 2.65a2 2 0 0 1-.45 2.11L8 9.74a16 16 0 0 0 6.26 6.26l1.26-1.26a2 2 0 0 1 2.11-.45c.85.28 1.74.48 2.65.6A2 2 0 0 1 22 16.92Z"/></svg>
+                </span>
+                <span class="contact-detail"><small>Appel direct</small><a data-field="phone" href="tel:0600000000">06 00 00 00 00</a></span>
+              </li>
+              <li>
+                <span class="contact-icon" aria-label="Email">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 7-10 6L2 7"/></svg>
+                </span>
+                <span class="contact-detail"><small>Email</small><a data-field="email" href="mailto:contact@azur-piscines.fr">contact@azur-piscines.fr</a></span>
+              </li>
+              <li>
+                <span class="contact-icon" aria-label="Secteur">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <span class="contact-detail"><small>Secteur</small><span data-field="serviceArea">Votre ville et alentours</span></span>
+              </li>
+              <li>
+                <span class="contact-icon" aria-label="Horaires">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                </span>
+                <span class="contact-detail"><small>Horaires</small><span data-field="openingHours">Lun - Ven : 8h30 - 18h</span></span>
+              </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <form id="quote-form" class="quote-form">
+          <div class="form-heading">
+            <span>Demande de devis</span>
+            <strong>R&eacute;ponse rapide</strong>
+          </div>
+          <label>Nom
+            <input name="name" autocomplete="name" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>T&eacute;l&eacute;phone
+            <input name="phone" autocomplete="tel">
+          </label>
+          <label>Votre demande
+            <textarea name="message" rows="5" required placeholder="Construction, rénovation, entretien..."></textarea>
+          </label>
+          <button class="button primary" type="submit">Envoyer la demande</button>
+          <p id="form-status" class="form-status" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><strong data-field="companyName">Azur Piscines</strong> - Artisan pisciniste</p>
+      <a href="admin.html">Administration galerie</a>
+    </footer>
+
+    <script src="assets/scripts/app.js"></script>
+    <!-- Rzu-Informatique -->
+  </body>
+</html>
+
+

@@ -1,0 +1,97 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px clamp(18px, 5vw, 64px);
+  background: rgba(255, 253, 248, 0.92);
+  border-bottom: 1px solid rgba(219, 231, 232, 0.82);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--blue);
+  color: white;
+  font-weight: 800;
+  transition: transform var(--hover-duration) var(--ease), background-color var(--hover-duration) var(--ease);
+}
+
+.brand:hover .brand-mark {
+  transform: translateY(-2px) scale(1.03);
+  background: var(--aqua);
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand small {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.95rem;
+}
+
+.main-nav a {
+  position: relative;
+  text-decoration: none;
+  color: var(--blue-dark);
+  font-weight: 700;
+}
+
+.main-nav a::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 2px;
+  background: var(--aqua);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--hover-duration) var(--ease);
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.admin-link {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.menu-button {
+  display: none;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  padding: 9px 12px;
+  color: var(--blue-dark);
+  font-weight: 700;
+}
+
+/* Rzu-Informatique */
