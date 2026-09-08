@@ -114,7 +114,6 @@
     color: var(--aqua);
   }
 
-  .content-band,
   .contact-section,
   .service-grid,
   .gallery,
@@ -146,11 +145,16 @@
   }
 
   .hero {
-    min-height: 720px;
+    min-height: 650px;
   }
 
   .hero h1 {
-    max-width: 11ch;
+    max-width: 12ch;
+  }
+
+  .service-card {
+    grid-template-columns: minmax(180px, .6fr) minmax(0, 1fr);
+    gap: 28px;
   }
 }
 
@@ -160,7 +164,13 @@
   }
 
   .hero {
-    min-height: 640px;
+    min-height: 590px;
+  }
+
+  .service-card {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 24px 0;
   }
 
   .site-footer {
@@ -205,4 +215,4 @@
   }
 }
 
-/* Rzu-Informatique */
+/* Copyright RZU Informatique */

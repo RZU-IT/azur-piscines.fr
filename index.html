@@ -5,60 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Azur Piscines - Artisan pisciniste</title>
     <meta name="description" content="Artisan pisciniste pour construction, rénovation et entretien de piscines. Demande de devis et galerie de chantiers.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rzu-it.github.io/azur-piscines.fr/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Azur Piscines">
+    <meta property="og:title" content="Azur Piscines - Artisan pisciniste">
+    <meta property="og:description" content="Construction, rénovation et entretien de piscines avec demande de devis et galerie de chantiers.">
+    <meta property="og:url" content="https://rzu-it.github.io/azur-piscines.fr/">
+    <meta property="og:image" content="https://rzu-it.github.io/azur-piscines.fr/assets/images/hero-piscine.png">
+    <meta property="og:image:alt" content="Piscine enterrée moderne réalisée par Azur Piscines">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Azur Piscines - Artisan pisciniste">
+    <meta name="twitter:description" content="Construction, rénovation et entretien de piscines avec demande de devis et galerie de chantiers.">
+    <meta name="twitter:image" content="https://rzu-it.github.io/azur-piscines.fr/assets/images/hero-piscine.png">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/styles/base.css">
     <link rel="stylesheet" href="assets/styles/navigation.css">
-    <link rel="stylesheet" href="assets/styles/hero.css">
-    <link rel="stylesheet" href="assets/styles/services.css">
-    <link rel="stylesheet" href="assets/styles/gallery.css">
-    <link rel="stylesheet" href="assets/styles/contact.css">
+    <link rel="stylesheet" href="assets/styles/hero.css?v=7">
+    <link rel="stylesheet" href="assets/styles/services.css?v=5">
+    <link rel="stylesheet" href="assets/styles/gallery.css?v=3">
+    <link rel="stylesheet" href="assets/styles/contact.css?v=3">
     <link rel="stylesheet" href="assets/styles/admin.css">
     <link rel="stylesheet" href="assets/styles/footer.css">
-    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css?v=3">
   </head>
   <body data-page="home">
     <div data-include="partials/navbar.html"></div>
 
     <main>
-      <section id="accueil" class="hero section">
-        <img class="hero-image" src="assets/images/hero-piscine.png" alt="Piscine enterrée moderne dans un jardin avec terrasse claire">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <p class="eyebrow">Construction, r&eacute;novation, entretien</p>
-          <h1 data-field="heroTitle">Votre piscine, pens&eacute;e et r&eacute;alis&eacute;e par un artisan local.</h1>
-          <p data-field="heroText">J'accompagne les particuliers de l'&eacute;tude du projet jusqu'&agrave; la mise en eau, avec des solutions fiables, durables et adapt&eacute;es &agrave; votre terrain.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="#contact">Demander un devis</a>
-            <a class="button secondary" href="gallery.html">Voir tous les chantiers</a>
+      <section id="accueil" class="hero-scroll-section section">
+        <div class="hero">
+          <video class="hero-image" data-hero-video data-src="assets/videos/hero-water-scroll.mp4" poster="assets/images/hero-water-poster.jpg" muted playsinline preload="auto" disablepictureinpicture aria-hidden="true"></video>
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <h1 class="hero-title" data-field="heroTitle" aria-label="Votre piscine, bien construite.">
+              <span class="hero-title-top">Votre piscine</span>
+              <span class="hero-title-bottom">bien construite</span>
+            </h1>
+            <div class="hero-actions">
+              <a class="button primary" href="#contact">Demander un devis</a>
+              <a class="button secondary" href="gallery.html">Voir tous les chantiers</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="intro section content-band">
-        <div>
-          <p class="eyebrow">Zone d'intervention</p>
-          <h2 data-field="areaTitle">Un pisciniste disponible dans votre secteur</h2>
-        </div>
-        <p data-field="areaText">Bas&eacute; localement, j'interviens dans un rayon d'environ 40 km pour les projets de construction, r&eacute;novation, remise en service et suivi d'entretien.</p>
-      </section>
-
       <section id="services" class="section services">
         <div class="section-heading">
-          <p class="eyebrow">Prestations</p>
-          <h2>Des services clairs pour chaque &eacute;tape</h2>
+          <h2>Ce que je prends en charge</h2>
         </div>
         <div class="service-grid">
           <article class="service-card">
-            <span>01</span>
             <h3 data-field="serviceConstructionTitle">Construction de piscine</h3>
             <p data-field="serviceConstructionText">&Eacute;tude du terrain, choix des &eacute;quipements, terrassement, structure, filtration et finitions.</p>
           </article>
           <article class="service-card">
-            <span>02</span>
             <h3 data-field="serviceRenovationTitle">R&eacute;novation</h3>
             <p data-field="serviceRenovationText">Remplacement de liner, reprise des margelles, modernisation de la filtration et am&eacute;lioration du confort.</p>
           </article>
           <article class="service-card">
-            <span>03</span>
             <h3 data-field="serviceEntretienTitle">Entretien et d&eacute;pannage</h3>
             <p data-field="serviceEntretienText">Mise en route, hivernage, analyse de l'eau, nettoyage, r&eacute;glages et suivi technique.</p>
           </article>
@@ -68,9 +74,8 @@
       <section id="realisations" class="section gallery-section">
         <div class="section-heading section-heading-row">
           <div>
-            <p class="eyebrow">Chantiers principaux</p>
-            <h2>Les piscines &agrave; mettre en avant</h2>
-            <p>Un aper&ccedil;u des r&eacute;alisations les plus parlantes. La galerie compl&egrave;te regroupe tous les chantiers.</p>
+            <h2>Chantiers r&eacute;cents</h2>
+            <p>Construction, r&eacute;novation et remise en service r&eacute;alis&eacute;es sur le secteur.</p>
           </div>
         </div>
         <div class="carousel" aria-label="Chantiers mis en avant">
@@ -86,9 +91,7 @@
 
       <section id="contact" class="section contact-section">
         <div class="contact-copy">
-          <p class="eyebrow">Devis gratuit</p>
-          <h2 data-field="contactTitle">Parlons de votre projet piscine</h2>
-          <p data-field="contactText">D&eacute;crivez votre besoin, votre commune et le d&eacute;lai souhait&eacute;. Je vous r&eacute;ponds rapidement pour organiser un premier &eacute;change.</p>
+          <h2 data-field="contactTitle">Parlons de votre projet</h2>
           <div class="contact-panel">
             <div class="contact-card">
               <ul class="contact-list">
@@ -96,25 +99,25 @@
                 <span class="contact-icon" aria-label="T&eacute;l&eacute;phone">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.91.32 1.8.6 2.65a2 2 0 0 1-.45 2.11L8 9.74a16 16 0 0 0 6.26 6.26l1.26-1.26a2 2 0 0 1 2.11-.45c.85.28 1.74.48 2.65.6A2 2 0 0 1 22 16.92Z"/></svg>
                 </span>
-                <span class="contact-detail"><small>Appel direct</small><a data-field="phone" href="tel:0600000000">06 00 00 00 00</a></span>
+                <span class="contact-detail"><a data-field="phone" href="tel:0600000000">06 00 00 00 00</a></span>
               </li>
               <li>
                 <span class="contact-icon" aria-label="Email">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 7-10 6L2 7"/></svg>
                 </span>
-                <span class="contact-detail"><small>Email</small><a data-field="email" href="mailto:contact@azur-piscines.fr">contact@azur-piscines.fr</a></span>
+                <span class="contact-detail"><a data-field="email" href="mailto:contact@azur-piscines.fr">contact@azur-piscines.fr</a></span>
               </li>
               <li>
                 <span class="contact-icon" aria-label="Secteur">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
                 </span>
-                <span class="contact-detail"><small>Secteur</small><span data-field="serviceArea">Votre ville et alentours</span></span>
+                <span class="contact-detail"><span data-field="serviceArea">Votre ville et alentours</span></span>
               </li>
               <li>
                 <span class="contact-icon" aria-label="Horaires">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
                 </span>
-                <span class="contact-detail"><small>Horaires</small><span data-field="openingHours">Lun - Ven : 8h30 - 18h</span></span>
+                <span class="contact-detail"><span data-field="openingHours">Lun - Ven : 8h30 - 18h</span></span>
               </li>
               </ul>
             </div>
@@ -123,7 +126,6 @@
         <form id="quote-form" class="quote-form">
           <div class="form-heading">
             <span>Demande de devis</span>
-            <strong>R&eacute;ponse rapide</strong>
           </div>
           <label>Nom
             <input name="name" autocomplete="name" required>
@@ -146,9 +148,10 @@
     <div data-include="partials/footer.html"></div>
 
     <script src="assets/scripts/includes.js"></script>
-    <script src="assets/scripts/app.js"></script>
-    <!-- Rzu-Informatique -->
+    <script src="assets/scripts/app.js?v=6"></script>
+    <script src="assets/scripts/hero-video-scroll.js?v=4"></script>
+
   </body>
 </html>
 
-
+<!-- Copyright RZU Informatique -->

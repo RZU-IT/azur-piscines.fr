@@ -1,22 +1,19 @@
-const DEMO_ACCESS_HASH = "11c5849a082713c246924b2f54544744d947c9a12a93385cc020dfec847022bd";
-const STORAGE_KEY = "pisciniste-site-content-v5";
+const DEMO_ACCESS_HASH = "441ba5bd2c8b13aa83235cf06928b1e95a47ef15a7943f7cf5a915b96968a3c3";
+const STORAGE_KEY = "pisciniste-site-content-v6";
 
 const defaults = {
   content: {
     companyName: "Azur Piscines",
     tagline: "Artisan pisciniste près de chez vous",
-    heroTitle: "Votre piscine, pensée et réalisée par un artisan local.",
-    heroText: "J'accompagne les particuliers de l'étude du projet jusqu'à la mise en eau, avec des solutions fiables, durables et adaptées à votre terrain.",
-    areaTitle: "Un pisciniste disponible dans votre secteur",
-    areaText: "Basé localement, j'interviens dans un rayon d'environ 40 km pour les projets de construction, rénovation, remise en service et suivi d'entretien.",
+    heroTitle: "Votre piscine, bien construite.",
+    heroText: "Construction, rénovation et entretien, de l'étude du terrain jusqu'à la mise en eau.",
     serviceConstructionTitle: "Construction de piscine",
     serviceConstructionText: "Étude du terrain, choix des équipements, terrassement, structure, filtration et finitions.",
     serviceRenovationTitle: "Rénovation",
     serviceRenovationText: "Remplacement de liner, reprise des margelles, modernisation de la filtration et amélioration du confort.",
     serviceEntretienTitle: "Entretien et dépannage",
     serviceEntretienText: "Mise en route, hivernage, analyse de l'eau, nettoyage, réglages et suivi technique.",
-    contactTitle: "Parlons de votre projet piscine",
-    contactText: "Décrivez votre besoin, votre commune et le délai souhaité. Je vous réponds rapidement pour organiser un premier échange.",
+    contactTitle: "Parlons de votre projet",
     phone: "06 00 00 00 00",
     email: "contact@azur-piscines.fr",
     serviceArea: "Votre ville et alentours",
@@ -132,6 +129,15 @@ function applyContent() {
   document.querySelectorAll("[data-field]").forEach((node) => {
     const key = node.dataset.field;
     const value = state.content[key] || "";
+
+    if (key === "heroTitle" && node.classList.contains("hero-title")) {
+      const parts = value.split(",");
+      node.querySelector(".hero-title-top").textContent = parts.shift().trim();
+      node.querySelector(".hero-title-bottom").textContent = parts.join(",").trim().replace(/[.]$/, "") || "bien construite";
+      node.setAttribute("aria-label", value);
+      return;
+    }
+
     node.textContent = value;
 
     if (key === "phone" && node.tagName === "A") {
@@ -218,7 +224,6 @@ function renderFeaturedCarousel(photos) {
     slide.innerHTML = `
       <img src="${photo.src}" alt="${escapeHtml(photo.title)}">
       <div class="carousel-caption">
-        <p>${escapeHtml(photo.category)}</p>
         <h3>${escapeHtml(photo.title)}</h3>
         ${photo.description ? `<span>${escapeHtml(photo.description)}</span>` : ""}
       </div>
@@ -489,4 +494,4 @@ if (document.querySelector("[data-include]")) {
   init();
 }
 
-// Rzu-Informatique
+// Copyright RZU Informatique

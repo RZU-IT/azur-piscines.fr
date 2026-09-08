@@ -2,11 +2,21 @@
   scroll-margin-top: 86px;
 }
 
+.hero-scroll-section {
+  --hero-progress: 0;
+  height: calc(100svh + 900px);
+  min-height: 1180px;
+  background: var(--blue-dark);
+}
+
 .hero {
   position: relative;
-  min-height: calc(100vh - 74px);
-  display: flex;
-  align-items: center;
+  position: sticky;
+  top: 74px;
+  height: calc(100svh - 74px);
+  min-height: 560px;
+  display: grid;
+  place-items: center;
   padding: clamp(56px, 8vw, 110px) clamp(18px, 5vw, 64px);
   overflow: hidden;
   color: white;
@@ -22,18 +32,29 @@
 
 .hero-image {
   object-fit: cover;
-  animation: heroDrift 18s var(--ease) both;
+  object-position: center;
+  background: var(--blue-dark);
+  transform: scale(calc(1.055 - var(--hero-progress) * .035));
+  filter: saturate(calc(.92 + var(--hero-progress) * .12));
+  opacity: 0;
+  transition: opacity .45s ease;
+  will-change: transform;
 }
 
+.hero-scroll-section.is-video-ready .hero-image { opacity: 1; }
+
 .hero-overlay {
-  background: linear-gradient(90deg, rgba(3, 37, 47, 0.8), rgba(3, 37, 47, 0.42), rgba(3, 37, 47, 0.08));
+  background:
+    linear-gradient(180deg, rgba(3, 37, 47, .16), rgba(3, 37, 47, .05) 45%, rgba(3, 37, 47, .38)),
+    linear-gradient(90deg, rgba(3, 37, 47, .58), rgba(3, 37, 47, .18) 54%, rgba(3, 37, 47, .06));
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  width: min(720px, 100%);
-  animation: fadeUp 0.75s var(--ease) both;
+  width: min(1180px, 100%);
+  height: min(680px, calc(100vh - 130px));
+  min-height: 510px;
 }
 
 .eyebrow {
@@ -47,16 +68,43 @@
 
 .hero h1 {
   margin: 0;
-  max-width: 13ch;
-  font-size: clamp(2.7rem, 8vw, 5.8rem);
-  line-height: 0.96;
+  max-width: none;
+  font-size: clamp(3rem, 6.2vw, 5.7rem);
+  line-height: 1;
   letter-spacing: 0;
 }
 
-.hero p:not(.eyebrow) {
-  max-width: 620px;
-  margin: 24px 0;
-  font-size: clamp(1.05rem, 2vw, 1.24rem);
+.hero-title span {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  text-shadow: 0 4px 24px rgba(3, 37, 47, .38);
+  will-change: transform, opacity;
+}
+
+.hero-title-top {
+  top: 5%;
+  left: 54%;
+  white-space: nowrap;
+  opacity: clamp(0, calc(var(--hero-progress) * 6), 1);
+  transform: translate(-50%, calc((1 - clamp(0, var(--hero-progress) * 6, 1)) * -32px));
+}
+
+.hero-title-bottom {
+  top: 68%;
+  right: 57%;
+  white-space: nowrap;
+  opacity: clamp(0, calc((var(--hero-progress) - .24) * 6), 1);
+  transform: translate(50%, calc((1 - clamp(0, (var(--hero-progress) - .24) * 6, 1)) * 32px));
+}
+
+.hero .hero-actions {
+  position: absolute;
+  right: 8%;
+  bottom: 6%;
+  opacity: clamp(0, calc((var(--hero-progress) - .52) * 5), 1);
+  transform: translateY(calc((1 - clamp(0, (var(--hero-progress) - .52) * 5, 1)) * 22px));
+  will-change: transform, opacity;
 }
 
 .hero-actions,
@@ -115,4 +163,38 @@
   color: var(--blue-dark);
 }
 
-/* Rzu-Informatique */
+@media (max-width: 860px) {
+  .hero-content { height: 560px; min-height: 0; }
+  .hero h1 { font-size: clamp(2.65rem, 10vw, 4.8rem); }
+  .hero-title-top { top: 7%; left: 57%; }
+  .hero-title-bottom { top: 66%; right: 52%; }
+  .hero .hero-actions { right: 0; bottom: 4%; left: 0; width: min(470px, 100%); margin-inline: auto; justify-content: center; }
+}
+
+@media (max-width: 560px) {
+  .hero-scroll-section {
+    height: calc(100svh + 620px);
+    min-height: 980px;
+  }
+
+  .hero { padding-inline: 16px; }
+  .hero-content { height: 500px; }
+  .hero h1 { font-size: clamp(2.35rem, 12vw, 3.45rem); }
+  .hero-title-top { top: 10%; left: 50%; }
+  .hero-title-bottom { top: 62%; right: 50%; }
+  .hero .hero-actions { bottom: 1%; gap: 9px; }
+  .hero .hero-actions .button { flex: 1 1 150px; padding-inline: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-section { height: 100svh; min-height: 640px; }
+  .hero-image { transform: none; filter: none; }
+  .hero-title-top,
+  .hero-title-bottom,
+  .hero .hero-actions { opacity: 1; }
+  .hero-title-top { transform: translate(-50%, 0); }
+  .hero-title-bottom { transform: translate(50%, 0); }
+  .hero .hero-actions { transform: none; }
+}
+
+/* Copyright RZU Informatique */
