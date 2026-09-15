@@ -11,6 +11,7 @@ if (heroSection && heroVideo) {
   let seekPending = false;
   let sourceUrl = '';
   let initialFrameRequested = false;
+  const compactViewport = matchMedia('(max-width: 680px)').matches;
 
   const clamp = (value, minimum, maximum) => Math.min(maximum, Math.max(minimum, value));
 
@@ -43,6 +44,10 @@ if (heroSection && heroVideo) {
   };
 
   const updateProgress = () => {
+    if (compactViewport) {
+      heroSection.style.setProperty('--hero-progress', '1');
+      return;
+    }
     const stickyTop = parseFloat(getComputedStyle(hero).top) || 0;
     const range = Math.max(heroSection.offsetHeight - hero.offsetHeight - stickyTop, 1);
     targetProgress = clamp(-heroSection.getBoundingClientRect().top / range, 0, 1);
@@ -64,6 +69,11 @@ if (heroSection && heroVideo) {
   const markReady = () => {
     duration = Number.isFinite(heroVideo.duration) ? heroVideo.duration : 0;
     heroSection.classList.add('is-video-ready');
+    if (compactViewport) {
+      heroVideo.loop = true;
+      heroVideo.play().catch(() => {});
+      return;
+    }
     if (!initialFrameRequested && duration && heroVideo.currentTime === 0) {
       initialFrameRequested = true;
       seekPending = true;

@@ -198,3 +198,12 @@
 }
 
 /* Copyright RZU Informatique */
+
+@media (max-width: 680px) {
+  .hero-scroll-section { height: auto; min-height: 0; }
+  .hero { position: relative; top: auto; height: min(760px, calc(100svh - 72px)); min-height: 600px; }
+  .hero-image { transform: none; filter: saturate(1.02); }
+  .hero-title-top,
+  .hero-title-bottom,
+  .hero .hero-actions { opacity: 1; transform: none; }
+}

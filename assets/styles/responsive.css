@@ -216,3 +216,11 @@
 }
 
 /* Copyright RZU Informatique */
+
+@media (max-width: 680px) {
+  .services .wrap { width: min(calc(100% - 32px), 560px); }
+  .services .section-heading { padding-inline: 0; text-align: center; }
+  .service-card { padding: 28px 22px; }
+  .service-card h3,
+  .service-card p { margin-left: 0; text-align: left; }
+}
