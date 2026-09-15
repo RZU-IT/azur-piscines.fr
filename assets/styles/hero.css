@@ -4,8 +4,8 @@
 
 .hero-scroll-section {
   --hero-progress: 0;
-  height: calc(100svh + 900px);
-  min-height: 1180px;
+  height: calc(100svh + 3000px);
+  min-height: 3400px;
   background: var(--blue-dark);
 }
 
@@ -200,8 +200,8 @@
 /* Copyright RZU Informatique */
 
 @media (max-width: 680px) {
-  .hero-scroll-section { height: auto; min-height: 0; }
-  .hero { position: relative; top: auto; height: min(760px, calc(100svh - 72px)); min-height: 600px; }
+  .hero-scroll-section { height: calc(100svh + 2200px); min-height: 2700px; }
+  .hero { position: sticky; top: 72px; height: calc(100svh - 72px); min-height: 560px; }
   .hero-image { transform: none; filter: saturate(1.02); }
   .hero-title-top,
   .hero-title-bottom {
@@ -210,10 +210,15 @@
     width: 100%;
     white-space: normal;
     text-align: center;
-    opacity: 1;
-    transform: none;
   }
-  .hero-title-top { top: 12%; }
-  .hero-title-bottom { top: 57%; }
-  .hero .hero-actions { opacity: 1; transform: none; }
+  .hero-title-top {
+    top: 12%;
+    opacity: clamp(0, calc(var(--hero-progress) * 7), 1);
+    transform: translateY(calc((1 - clamp(0, var(--hero-progress) * 7, 1)) * -24px));
+  }
+  .hero-title-bottom {
+    top: 57%;
+    opacity: clamp(0, calc((var(--hero-progress) - .28) * 7), 1);
+    transform: translateY(calc((1 - clamp(0, (var(--hero-progress) - .28) * 7, 1)) * 24px));
+  }
 }
