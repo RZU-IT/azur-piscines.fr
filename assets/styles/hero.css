@@ -4,8 +4,8 @@
 
 .hero-scroll-section {
   --hero-progress: 0;
-  height: calc(100svh + 3000px);
-  min-height: 3400px;
+  height: calc(100svh + 1800px);
+  min-height: 2200px;
   background: var(--blue-dark);
 }
 
@@ -35,7 +35,7 @@
   object-position: center;
   background: var(--blue-dark);
   transform: scale(calc(1.055 - var(--hero-progress) * .035));
-  filter: saturate(calc(.92 + var(--hero-progress) * .12));
+  filter: saturate(1.02);
   opacity: 1;
   transition: opacity .45s ease;
   will-change: transform;
@@ -107,6 +107,8 @@
   will-change: transform, opacity;
 }
 
+.hero-play { display: none; }
+
 .hero-actions,
 .admin-actions {
   display: flex;
@@ -172,11 +174,6 @@
 }
 
 @media (max-width: 560px) {
-  .hero-scroll-section {
-    height: calc(100svh + 620px);
-    min-height: 980px;
-  }
-
   .hero { padding-inline: 16px; }
   .hero-content { height: 500px; }
   .hero h1 { font-size: clamp(2.35rem, 12vw, 3.45rem); }
@@ -197,11 +194,16 @@
   .hero .hero-actions { transform: none; }
 }
 
-/* Copyright RZU Informatique */
-
 @media (max-width: 680px) {
-  .hero-scroll-section { height: calc(100svh + 2200px); min-height: 2700px; }
-  .hero { position: sticky; top: 72px; height: calc(100svh - 72px); min-height: 560px; }
+  html.hero-mobile-locked,
+  body.hero-mobile-locked {
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: none;
+  }
+
+  .hero-scroll-section { height: calc(100svh - 72px); min-height: 560px; }
+  .hero { position: relative; top: auto; height: 100%; min-height: 560px; }
   .hero-image { transform: none; filter: saturate(1.02); }
   .hero-title-top,
   .hero-title-bottom {
@@ -221,4 +223,46 @@
     opacity: clamp(0, calc((var(--hero-progress) - .28) * 7), 1);
     transform: translateY(calc((1 - clamp(0, (var(--hero-progress) - .28) * 7, 1)) * 24px));
   }
+
+  .hero-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, .52);
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(3, 37, 47, .34);
+    box-shadow: 0 8px 24px rgba(3, 37, 47, .2);
+    font: inherit;
+    font-weight: 800;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+    transition: opacity .25s ease, transform .25s ease;
+  }
+
+  .hero-play-icon {
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 13px solid #fff;
+    margin-left: 3px;
+  }
+
+  .hero-scroll-section.is-playing .hero-play,
+  .hero-scroll-section.is-complete .hero-play {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.92);
+    pointer-events: none;
+  }
 }
+
+/* Copyright RZU Informatique */
