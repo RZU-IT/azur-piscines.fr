@@ -204,6 +204,16 @@
   .hero { position: relative; top: auto; height: min(760px, calc(100svh - 72px)); min-height: 600px; }
   .hero-image { transform: none; filter: saturate(1.02); }
   .hero-title-top,
-  .hero-title-bottom,
+  .hero-title-bottom {
+    right: 0;
+    left: 0;
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+    opacity: 1;
+    transform: none;
+  }
+  .hero-title-top { top: 12%; }
+  .hero-title-bottom { top: 57%; }
   .hero .hero-actions { opacity: 1; transform: none; }
 }
