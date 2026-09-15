@@ -97,20 +97,7 @@ if (heroSection && heroVideo) {
   };
 
   const videoSource = heroVideo.dataset.src;
-  if (videoSource && window.fetch && window.URL && window.URL.createObjectURL) {
-    fetch(videoSource)
-      .then((response) => {
-        if (!response.ok) throw new Error(String(response.status));
-        return response.blob();
-      })
-      .then((blob) => {
-        sourceUrl = URL.createObjectURL(blob);
-        applySource(sourceUrl);
-      })
-      .catch(() => applySource(videoSource));
-  } else if (videoSource) {
-    applySource(videoSource);
-  }
+  if (videoSource) applySource(videoSource);
 
   addEventListener('pointerdown', primeVideo, { once: true, passive: true });
   addEventListener('touchstart', primeVideo, { once: true, passive: true });

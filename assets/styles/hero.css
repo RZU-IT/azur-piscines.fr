@@ -36,7 +36,7 @@
   background: var(--blue-dark);
   transform: scale(calc(1.055 - var(--hero-progress) * .035));
   filter: saturate(calc(.92 + var(--hero-progress) * .12));
-  opacity: 0;
+  opacity: 1;
   transition: opacity .45s ease;
   will-change: transform;
 }
