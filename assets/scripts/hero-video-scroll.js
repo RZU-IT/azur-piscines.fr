@@ -3,14 +3,15 @@ const heroVideo = document.querySelector('[data-hero-video]');
 
 if (heroSection && heroVideo) {
   const hero = heroSection.querySelector('.hero');
-  const playButton = heroSection.querySelector('[data-hero-play]');
   const mobilePlayback = matchMedia('(max-width: 680px)').matches;
+  const mobileReleaseProgress = 0.7;
   let frame = 0;
   let targetProgress = 0;
   let duration = 0;
   let seekPending = false;
   let renderedProgress = -1;
   let ready = false;
+  let mobileStarted = false;
 
   const setMobileScrollLocked = (locked) => {
     if (!mobilePlayback) return;
@@ -55,8 +56,27 @@ if (heroSection && heroVideo) {
 
   const syncMobilePlayback = () => {
     if (!mobilePlayback || !duration) return;
-    paintProgress(heroVideo.currentTime / duration);
+    const progress = heroVideo.currentTime / duration;
+    paintProgress(progress);
+    if (progress >= mobileReleaseProgress) setMobileScrollLocked(false);
     if (!heroVideo.paused && !heroVideo.ended) requestAnimationFrame(syncMobilePlayback);
+  };
+
+  const startMobilePlayback = async () => {
+    if (!mobilePlayback || mobileStarted || !duration) return;
+    mobileStarted = true;
+    heroVideo.currentTime = 0;
+    paintProgress(0);
+    heroSection.classList.add('is-playing');
+    setMobileScrollLocked(true);
+
+    try {
+      await heroVideo.play();
+      requestAnimationFrame(syncMobilePlayback);
+    } catch (error) {
+      heroSection.classList.remove('is-playing');
+      setMobileScrollLocked(false);
+    }
   };
 
   const markReady = () => {
@@ -68,27 +88,10 @@ if (heroSection && heroVideo) {
     heroVideo.pause();
     heroVideo.currentTime = 0;
     paintProgress(0);
+    startMobilePlayback();
   };
 
-  if (mobilePlayback && playButton) {
-    setMobileScrollLocked(true);
-
-    playButton.addEventListener('click', async () => {
-      if (!duration) markReady();
-      heroVideo.currentTime = 0;
-      paintProgress(0);
-      heroSection.classList.remove('is-complete');
-      heroSection.classList.add('is-playing');
-
-      try {
-        await heroVideo.play();
-        requestAnimationFrame(syncMobilePlayback);
-      } catch (error) {
-        heroSection.classList.remove('is-playing');
-        setMobileScrollLocked(false);
-      }
-    });
-
+  if (mobilePlayback) {
     heroVideo.addEventListener('ended', () => {
       paintProgress(1);
       heroSection.classList.remove('is-playing');

@@ -107,8 +107,6 @@
   will-change: transform, opacity;
 }
 
-.hero-play { display: none; }
-
 .hero-actions,
 .admin-actions {
   display: flex;
@@ -224,45 +222,6 @@
     transform: translateY(calc((1 - clamp(0, (var(--hero-progress) - .28) * 7, 1)) * 24px));
   }
 
-  .hero-play {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 4;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    padding: 0;
-    border: 1px solid rgba(255, 255, 255, .52);
-    border-radius: 50%;
-    color: #fff;
-    background: rgba(3, 37, 47, .34);
-    box-shadow: 0 8px 24px rgba(3, 37, 47, .2);
-    font: inherit;
-    font-weight: 800;
-    transform: translate(-50%, -50%);
-    backdrop-filter: blur(8px);
-    cursor: pointer;
-    transition: opacity .25s ease, transform .25s ease;
-  }
-
-  .hero-play-icon {
-    width: 0;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-left: 13px solid #fff;
-    margin-left: 3px;
-  }
-
-  .hero-scroll-section.is-playing .hero-play,
-  .hero-scroll-section.is-complete .hero-play {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(.92);
-    pointer-events: none;
-  }
 }
 
 /* Copyright RZU Informatique */
