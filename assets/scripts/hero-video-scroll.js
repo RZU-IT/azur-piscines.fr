@@ -2,6 +2,9 @@ const heroSection = document.querySelector('.hero-scroll-section');
 const heroVideo = document.querySelector('[data-hero-video]');
 
 if (heroSection && heroVideo) {
+  heroVideo.playsInline = true;
+  heroVideo.setAttribute('playsinline', '');
+  heroVideo.setAttribute('webkit-playsinline', '');
   const hero = heroSection.querySelector('.hero');
   const mobilePlayback = matchMedia('(max-width: 680px)').matches;
   const mobileReleaseProgress = 0.7;
@@ -92,6 +95,13 @@ if (heroSection && heroVideo) {
   };
 
   if (mobilePlayback) {
+    heroVideo.addEventListener('webkitbeginfullscreen', () => {
+      heroVideo.pause();
+      if (heroVideo.webkitExitFullscreen) heroVideo.webkitExitFullscreen();
+      paintProgress(1);
+      heroSection.classList.add('is-complete');
+      setMobileScrollLocked(false);
+    });
     heroVideo.addEventListener('ended', () => {
       paintProgress(1);
       heroSection.classList.remove('is-playing');

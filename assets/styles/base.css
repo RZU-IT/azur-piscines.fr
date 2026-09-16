@@ -1,3 +1,5 @@
+html { -webkit-tap-highlight-color: transparent; }
+
 :root {
   --blue: #075b75;
   --blue-dark: #053847;
